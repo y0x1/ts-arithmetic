@@ -1,5 +1,5 @@
 {
-  "name": "ts-arithmetic",
+  "name": "@y0x1/ts-arithmetic",
   "version": "0.1.1",
   "description": "Type Level Arithmetic",
   "keywords": [
@@ -12,13 +12,13 @@
     "minus",
     "product"
   ],
-  "homepage": "https://github.com/arielhs/ts-arithmetic",
+  "homepage": "https://github.com/y0x1/ts-arithmetic",
   "bugs": {
-    "url": "https://github.com/arielhs/ts-arithmetic/issues"
+    "url": "https://github.com/y0x1/ts-arithmetic/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/arielhs/ts-arithmetic.git"
+    "url": "https://github.com/y0x1/ts-arithmetic.git"
   },
   "files": [
     "dist"
