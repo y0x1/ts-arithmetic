@@ -77,6 +77,6 @@ export type Multiply<X extends number, Y extends number> = (
  * @public
 */
 export type MultiplyN<A extends readonly number[]> =
-    A extends [infer H extends number, ...infer R extends readonly number[]] ?
+    A extends readonly [infer H extends number, ...infer R extends readonly number[]] ?
     Multiply<H, MultiplyN<R>> :
     A extends readonly [] ? 1 : number

@@ -69,6 +69,6 @@ export type Add<X extends number, Y extends number> = (
  * @public
 */
 export type AddN<A extends readonly number[]> = 
-    A extends [infer H extends number, ...infer R extends readonly number[]] ?
+    A extends readonly [infer H extends number, ...infer R extends readonly number[]] ?
     Add<H, AddN<R>> :
     A extends readonly [] ? 0 : number
