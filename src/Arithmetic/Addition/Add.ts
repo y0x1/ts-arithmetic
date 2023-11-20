@@ -59,3 +59,19 @@ export type Add<X extends number, Y extends number> = (
     : number extends (X | Y) ? number
     : AddNumbers<X, Y>
 )
+
+/**
+ * Add arbitrary number of numeric type literals.
+ * 
+ * @param A - readonly number[]
+ * @returns A[0] + A[1] ... + Last<A>
+ * 
+ * @public
+*/
+export type AddN<A extends readonly number[]> = 
+    A extends [infer H extends number, ...infer R extends readonly number[]] ?
+    Add<H, AddN<R>> : 0
+
+
+
+

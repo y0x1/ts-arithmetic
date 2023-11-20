@@ -67,3 +67,16 @@ export type Multiply<X extends number, Y extends number> = (
     : Y extends -1 ? Negate<X>
     : MultiplyNumbers<X, Y>
 )
+
+/**
+ * Multiply arbitrary number of numeric type literals.
+ * 
+ * @param A - readonly number[]
+ * @returns A[0] * A[1] ... * Last<A>
+ * 
+ * @public
+*/
+export type MultiplyN<A extends readonly number[]> =
+    A extends [infer H extends number, ...infer R extends readonly number[]] ?
+    Multiply<H, MultiplyN<R>> : 1
+    

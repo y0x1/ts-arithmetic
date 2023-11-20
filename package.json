@@ -1,6 +1,6 @@
 {
   "name": "@y0x1/ts-arithmetic",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Type Level Arithmetic",
   "keywords": [
     "type arithmetic",
@@ -27,6 +27,10 @@
   "author": "Ariel HS",
   "license": "MIT",
   "private": false,
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "scripts": {
     "build": "tsc && api-extractor run --local --typescript-compiler-folder node_modules/typescript/lib",
     "tsc": "tsc"
