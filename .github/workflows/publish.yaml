@@ -17,7 +17,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
           # Defaults to the user or organization that owns the workflow file
           #scope: '@y0x1'
-      - run: npm ci
+      # - run: npm ci
       # - run: npm config set access public
       - run: npm publish
         env:
