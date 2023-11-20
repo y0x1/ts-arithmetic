@@ -1,1 +1,1 @@
-export type { Multiply, MultiplySignedFloats } from './Multiply'
+export type { Multiply, MultiplyN, MultiplySignedFloats } from './Multiply'

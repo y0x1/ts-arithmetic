@@ -1,6 +1,6 @@
-export type { Add } from './Arithmetic/Addition'
+export type { Add, AddN } from './Arithmetic/Addition'
 export type { Subtract } from './Arithmetic/Subtraction'
-export type { Multiply } from './Arithmetic/Multiplication'
+export type { Multiply, MultiplyN } from './Arithmetic/Multiplication'
 export type { Divide, Mod } from './Arithmetic/Division'
 export type { Pow } from './Arithmetic/Exponentiation'
 export type { Negate, Abs, IsPositive, IsNegative, Compare, IsOdd, IsEven, IsInt, IsNotInt } from './Arithmetic/Number'
