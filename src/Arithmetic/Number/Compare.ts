@@ -6,8 +6,8 @@ import type { SplitAndNormalise } from './SplitAndNormalise'
 
 type CompareNumberMagnitudes<X extends number, Y extends number> = (
     SplitAndNormalise<X, Y> extends [...DigitsPair<infer TNormalisedX, infer TNormalisedY>, number]
-        ? CompareMagnitudes<TNormalisedX, TNormalisedY>
-        : never
+    ? CompareMagnitudes<TNormalisedX, TNormalisedY>
+    : never
 )
 
 export type _Compare<X extends number, Y extends number> = (
@@ -38,8 +38,8 @@ export type Compare<X extends number, Y extends number> = (
     SomeElementExtends<[X, Y], never> extends 1 ? never
     : number extends (X | Y) ? ComparisonResult
     : X extends X ? Y extends Y ? // forces distribution over union types
-        _Compare<X, Y>
-    : never : never  
+    _Compare<X, Y>
+    : never : never
 )
 
 type _CompareMap = {
@@ -91,10 +91,10 @@ export type Eq<X extends number, Y extends number> = (
     SomeElementExtends<[X, Y], never> extends 1 ? never
     : number extends (X | Y) ? Bit
     : X extends Y
-        ? Y extends X
-            ? 1
-            : 0
-        : 0
+    ? Y extends X
+    ? 1
+    : 0
+    : 0
 )
 
 /**
@@ -142,6 +142,18 @@ export type Max<X extends number, Y extends number> = (
 )
 
 /**
+ * Get the greatest of arbitrary number of numeric type literals.
+ * 
+ * @param A - readonly number[]
+ * @returns maximum element of A
+ * 
+ * @public
+*/
+export type MaxN<X extends readonly number[], M extends number = X[0]> =
+    X extends readonly [infer H extends number, ...infer R extends number[]] ?
+    MaxN<R, Max<H, M>> : M
+
+/**
  * Get the smallest of two numeric type literals.
  * 
  * @param X - The first operand.
@@ -156,3 +168,15 @@ export type Min<X extends number, Y extends number> = (
     : Y extends X ? Y
     : Lt<X, Y> extends 1 ? X : Y
 )
+
+/**
+ * Get the smallest of arbitrary number of numeric type literals.
+ * 
+ * @param A - readonly number[]
+ * @returns minimum element of A
+ * 
+ * @public
+*/
+export type MinN<X extends readonly number[], M extends number = X[0]> =
+    X extends readonly [infer H extends number, ...infer R extends number[]] ?
+    MinN<R, Min<H, M>> : M
